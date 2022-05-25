@@ -5,12 +5,13 @@ const Part = (props) => {
     </p>
   );
 };
+
 const Content = (props) => {
   console.log(props);
   const parts = props.parts;
   return (
     <div>
-      {parts.map((element) => (        
+      {parts.map((element) => (
         <Part name={element.name} exercises={element.exercises}></Part>
       ))}
     </div>
@@ -24,6 +25,7 @@ const Header = (props) => {
 const Total = (props) => {
   const total = props.parts.reduce((acc, curr) => {
     return acc + curr.exercises;
+  });
   return <p>Number of exercises {total}</p>;
 };
 
