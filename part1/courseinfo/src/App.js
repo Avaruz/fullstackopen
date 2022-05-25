@@ -1,3 +1,5 @@
+import Header from "./components/Header";
+
 const Part = (props) => {
   return (
     <p>
@@ -18,14 +20,11 @@ const Content = (props) => {
   );
 };
 
-const Header = (props) => {
-  return <h1>{props.course}</h1>;
-};
-
 const Total = (props) => {
-  const total = props.parts.reduce((acc, curr) => {
-    return acc + curr.exercises;
-  });
+  console.log(props);
+  const parts = props.parts;
+  const total = parts.reduce((acc, part) => acc + part.exercises, 0);
+
   return <p>Number of exercises {total}</p>;
 };
 
