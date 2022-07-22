@@ -1,32 +1,8 @@
 import Header from "./components/Header";
+import Content from "./components/Content";
+import { Total } from "./components/Total";
 
-const Part = (props) => {
-  return (
-    <p>
-      {props.name} {props.exercises}
-    </p>
-  );
-};
 
-const Content = (props) => {
-  console.log(props);
-  const parts = props.parts;
-  return (
-    <div>
-      {parts.map((element) => (
-        <Part name={element.name} exercises={element.exercises}></Part>
-      ))}
-    </div>
-  );
-};
-
-const Total = (props) => {
-  console.log(props);
-  const parts = props.parts;
-  const total = parts.reduce((acc, part) => acc + part.exercises, 0);
-
-  return <p>Number of exercises {total}</p>;
-};
 
 const App = () => {
   const course = "Half Stack application development";
